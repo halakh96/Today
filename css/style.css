@@ -1,5 +1,6 @@
+
 #FullPage {
-    background: #E8EAE6;
+    background: #E8EAE6!important;
     color:#3e3f3a!important;
   }
 
@@ -13,3 +14,16 @@
     background: #3e3f3a!important;
     color: white!important;
   }
+
+  
+  
+  
+  #weather {
+    font: 1rem/1.3 "Roboto", sans-serif;
+    border: none;
+    background: #E8EAE6;
+    color: #1e2432;
+    padding: 70px;
+  }
+  
+  

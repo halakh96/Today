@@ -17,7 +17,8 @@ const NewsFunction = (cat) => {
     fetch(url).then((res=>{
         res.json().then((res)=>{
             console.log(res.articles)
-     //mapping here
+    
+            //mapping here
       
 document.getElementById('newsCard').innerHTML = res.articles.map(item =>
 `<div class="card">
@@ -38,44 +39,46 @@ document.getElementById('newsCard').innerHTML = res.articles.map(item =>
 
 }
 
+/*SEARCH BY USING A CITY NAME (e.g. athens) OR A COMMA-SEPARATED CITY NAME ALONG WITH THE COUNTRY CODE (e.g. athens,gr)*/
+const form = document.querySelector("#weather form");
+const input = document.querySelector("#weather input");
+const msg = document.querySelector("#weather .msg");
+const city = document.querySelector("#weather .city");
+/*PUT YOUR OWN KEY HERE - THIS MIGHT NOT WORK
+SUBSCRIBE HERE: https://home.openweathermap.org/users/sign_up*/
+const apiKey = "3ee75691029a24f2dc485291c42637ea";
 
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const inputVal = input.value;
+  //ajax here
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey}&units=metric`;
 
-// weather api
-
-
-const weatherFetch =(city)=>{
-url=`https://api.weatherbit.io/v2.0/current?city=${city}&KEY=72b065a0dd03481089c7c4cffaf9e566`
-fetch(url).then((res=>{
-    res.json().then((res)=>{
-        console.log(res.data)
- //mapping here
-  
-document.getElementById('weather').innerHTML = res.data.map(item =>
-`<div class="container-fluid p-5 ">
-    <div class="d-flex justify-content-evenly ">
-<div class="fw-bold fs-2 fst-italic ">${item.city_name}</div>
-<div> ${item.weather.icon}</div>
-</div>
-
-<div class=" text-center m-3">
-<h1>${item.temp}&deg</h1>
-</div>
-<div class="text-center m-3">${item.weather.description}</div>
-<div class="d-flex justify-content-evenly ">
-<div>Humidity:${item.rh}%</div>
-<div>Wind Speed: ${item.wind_spd}km/h</div>
-</div>
-</div>`
-    ).join('')
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const { main, name, sys, weather } = data;
+      const icon = `https://openweathermap.org/img/wn/${
+        weather[0]["icon"]
+      }@2x.png`;
+      const markup = `
+      <div class="m-2 p-4 ">
+        <h2 class="city-name" data-name="${name},${sys.country}">
+          <span>${name}</span>
+          <sup>${sys.country}</sup>
+        </h2>
+        <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+        <figure>
+          <img class="city-icon" src=${icon} alt=${weather[0]["main"]}>
+          <figcaption class="mt-3">${weather[0]["description"]}</figcaption>
+        </figure>
+        </div>
+      `;
+      city.innerHTML = markup;
     })
-}))
+    
 
-
-}
-
-
-const city = document.querySelector("#cityText");
-const searchBtn = document.querySelector("#searchBtn");
-
-searchBtn.addEventListener("click",weatherFetch(city));
-
+  msg.textContent = "";
+  form.reset();
+  input.focus();
+});
