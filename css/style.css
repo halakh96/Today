@@ -1,7 +1,9 @@
 body {
-  background: rgb(241, 245, 248);
+  background: rgb(188, 220, 247)!important;
 
 }
+
+
 #bg-card {
   border-radius: 30px;
   background: rgb(241, 241, 241);

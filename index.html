@@ -18,7 +18,12 @@
 <div class="row justify-content-center m-5">
   <div class="col-12 col-md-6 ">
     <div class="card w-75 mx-auto " id="bg-card">
-      <div class="container p-4">
+      <div class="container p-4 citySearch">
+        <form class="d-flex m-4 ">
+          <input  class="form-control "type="text" placeholder="Search .." aria-label="Search">
+          <span class=" input-group-text bg-primary " type="submit"><i class="fas fa-search text-white"></i>
+          </span>
+        </form>
         <div class="d-flex ">
           <div>
         <div class="fs-1 " id="location">Unable to Fetch Weather</div>
@@ -28,10 +33,7 @@
       </div>
       <div class="weather fs-1 fw-bold text-center">
         <div class="c">Error</div>
-    </div>
-    
-       
-        
+      </div>   
 
     </div>
 
@@ -42,9 +44,9 @@
 <!--categories info-->
 <div class="row justify-content-center m-5">
 <div class="col-12 col-md-8  ">
-  <div class="card mx-auto">
+  <div class="card mx-auto newsSearch">
     <form class="d-flex m-4 ">
-      <input class="form-control "type="text" placeholder="Search .." aria-label="Search">
+      <input  class="form-control "type="text" placeholder="Search .." aria-label="Search">
       <span class=" input-group-text bg-primary " type="submit"><i class="fas fa-search text-white"></i>
       </span>
     </form>
@@ -67,8 +69,8 @@
 </div>
 
 <!--news info-->
-<div class="row   m-5 p-3 ">
-<div class="col-12 bg-white mx-auto " id="newsCard">
+<div class="row  m-5 p-3 " >
+<div class="col-12  mx-auto " id="newsCard">
    <!--Fetching & mapping / js file-->
 
      <!--pagenation-->
