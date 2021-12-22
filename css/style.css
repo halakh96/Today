@@ -1,29 +1,20 @@
+body {
+  background: rgb(241, 245, 248);
 
-#FullPage {
-    background: #E8EAE6!important;
-    color:#3e3f3a!important;
-  }
+}
+#bg-card {
+  border-radius: 30px;
+  background: rgb(241, 241, 241);
 
-.bg-Amulet {
-    color: white!important;
-    background: #7C9473!important;
-    
-  }
-  
-  .bg-darkGray {
-    background: #3e3f3a!important;
-    color: white!important;
-  }
+}
 
-  
-  
-  
-  #weather {
-    font: 1rem/1.3 "Roboto", sans-serif;
-    border: none;
-    background: #E8EAE6;
-    color: #1e2432;
-    padding: 70px;
-  }
-  
-  
+.btn {
+  border-color: lightgray!important;
+  background: white;
+
+}
+.btn:hover{
+background: rgba(36, 160, 237,0.3);
+
+
+}

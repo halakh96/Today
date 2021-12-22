@@ -12,81 +12,82 @@
 
 </head>
 <body>
+  <div class="container m-5 ">
 
-<div id="FullPage">
-  <!--NavBar-->
-  <nav class="navbar navbar-expand  bg-darkGray shadow " >
-     <div class="container">
-      <a class="navbar-brand " href="#">
-        <img  src="/img/logo1.png" alt=""width="50px" > 
-      </a><h2 class="me-auto">News</h2>
-      
-     
-
+    <!--weather info-->
+<div class="row justify-content-center m-5">
+  <div class="col-12 col-md-6 ">
+    <div class="card w-75 mx-auto " id="bg-card">
+      <div class="container p-4">
+        <div class="d-flex ">
+          <div>
+        <div class="fs-1 " id="location">Unable to Fetch Weather</div>
+        <div class="desc fs-5">No Information Available.</div>
+      </div>
+        <img class="ms-auto"src="" alt="" srcset="" id="weather-icon">
+      </div>
+      <div class="weather fs-1 fw-bold text-center">
+        <div class="c">Error</div>
+    </div>
+    
+       
         
-  
-   
-      <ul class=" navbar-nav ">
-        <li class="nav-item"><a class=" nav-link text-white" href="#"><i class="fab fa-twitter fa-lg"></i></a></li>
-        <li class="nav-item"><a class=" nav-link text-white"href="#"><i class="fab fa-facebook-f fa-lg"></i></a></li>
-        <li class="nav-item"> <a class="nav-link text-white"href="#"><i class="fab fa-instagram fa-lg"></i></a></li>
-          <li class="nav-item"> <a class=" nav-link text-white"href="#"><i class="fab fa-linkedin-in fa-lg"></i></a></li>
-      </ul>
 
-      
     </div>
-  </nav>
 
-
-
-  <div class="row row-cols-md-2  align-items-center  m-5 ">
-   
-    <!--Categories-->
-    <div class="col-12 col-lg-6 text-center d-flex justify-content-center mb-5">
-  
-
-
-<ul class="list-group w-75 ">
-  <h2>Categories:</h2>
-    <li class="Category-Title list-group-item m-2 "data-value="general">General</li>
-    <li class="Category-Title list-group-item m-2"data-value="technology">Technology</li>
-    <li class="Category-Title list-group-item m-2"data-value="health">Health</li>
-    <li class="Category-Title list-group-item m-2"data-value="sports">Sports</li>
-    <li class="Category-Title list-group-item m-2"data-value="science">Science</li>
-    <li class="Category-Title list-group-item m-2" data-value="business">Business</li>
-</ul>
-
-</div>
- <!--Weather-->
- <div class="col-12 col-lg-6 d-flex justify-content-center mb-5 mt-5" >
-   <div class="card" id="weather">
-  <form class="m-3 d-flex ">
-    <input type="text" placeholder="Search for a city" autofocus>
-    <span class=" input-group-text  " type="submit"><i class="fas fa-search"></i>
-    </span>
-    <span class="msg"></span>
-  </form>
-  <div class="city "></div>
-</div>
     </div>
+  </div>
+</div>
+
+<!--categories info-->
+<div class="row justify-content-center m-5">
+<div class="col-12 col-md-8  ">
+  <div class="card mx-auto">
+    <form class="d-flex m-4 ">
+      <input class="form-control "type="text" placeholder="Search .." aria-label="Search">
+      <span class=" input-group-text bg-primary " type="submit"><i class="fas fa-search text-white"></i>
+      </span>
+    </form>
+    <div class="d-flex justify-content-center  ">
+    <div type="button" class="btn  m-1 Category-Title" data-value="Business">Business</div>
+    <div type="button" class="btn  m-1 Category-Title" data-value="Entertainment">Entertainment</div>
+    <div type="button" class="btn  m-1 Category-Title" data-value="general">General</div>
+  </div>
+  <div class="d-flex justify-content-center mb-4  ">
+    <div type="button" class="btn  m-1 Category-Title" data-value="Health">Health</div>
+    <div type="button" class="btn  m-1 Category-Title" data-value="Sports">Sports</div>
+    <div type="button" class="btn  m-1 Category-Title" data-value="Technology">Technology</div>
   </div>
 
 
 
-<!--news card-->
-<div class="container ">
-<div class="row row-cols-md-2 row-cols-lg-3"id="newsCard">
- <div class="col-12 col-md-4" >
   
-   </div>
+</div>
+</div>
+</div>
+
+<!--news info-->
+<div class="row   m-5 p-3 ">
+<div class="col-12 bg-white mx-auto " id="newsCard">
+   <!--Fetching & mapping / js file-->
+
+     <!--pagenation-->
+
+   
+  </div>
+  <nav aria-label="Page navigation  ">
+    <ul class="pagination justify-content-center mt-3">
+      <li class="page-item "><a class="page-link bg-primary " href="#"><i class="fas fa-arrow-left text-white"></i></a></li>
+      <li class="page-item "><a class="page-link bg-primary" href="#"><i class="fas fa-arrow-right text-white"></i></a></li>
+    </ul>
+  </nav>
 </div>
 </div>
 
 
 </div>
-
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-<script src="js/script.js"></script>
-</body>
-</html>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+  </body>
+  </html>
