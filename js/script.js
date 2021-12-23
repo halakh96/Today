@@ -48,12 +48,11 @@ window.addEventListener('load', () => {
 
 // API WEATHER BY SEARCH
  const weatherForm = document.querySelector(".citySearch form");
- const weatherInput = document.querySelector(".citySearch input");
-const City = weatherInput.value;
 
+weatherForm.addEventListener("submit", (event)=>{
+  event.preventDefault()
 
-weatherForm.addEventListener("submit", (City)=>{
- 
+  let City = document.querySelector(".citySearch input").value;
  url =`https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=${api}&units=metric`;
 
  fetch(url)
@@ -83,6 +82,9 @@ weatherForm.addEventListener("submit", (City)=>{
 
 // API NEWS BY CATEGORIES
 const AllCategories = document.querySelectorAll(".Category-Title");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+var page = '1';
 
 const fetchCat =(event)=>{
     let cat = event.target.getAttribute("data-value")
@@ -95,7 +97,7 @@ for(let i=0;i<AllCategories.length;i++){
 }
 
 const NewsFunction = (cat) => {
-    url=`https://newsapi.org/v2/top-headlines?category=${cat}&language=en&pageSize=10&apiKey=233b6411d34640098f2872adb12f88d8`
+    url=`https://newsapi.org/v2/top-headlines?category=${cat}&language=en&pageSize=2&page=${page}&apiKey=233b6411d34640098f2872adb12f88d8`
 
     fetch(url)
     .then((res=>{res.json()
@@ -122,18 +124,33 @@ document.getElementById('newsCard').innerHTML = res.articles.map(item =>
 
         })
     }))
+    nextBtn.addEventListener("click", ()=>{
+      console.log("next");
+      page++;
+      NewsFunction(cat);
+      })
 
+      prevBtn.addEventListener("click", ()=>{
+        page--;
+        NewsFunction();
+        })
+        
+    
 }
+
+
+
 
 
 // API NEWS BY SEARCH 
 const newsForm = document.querySelector(".newsSearch form");
-const newsInput = document.querySelector(".newsSearch input");
-const inputValue=newsInput.value;
+newsForm.addEventListener("submit", (event)=>{
 
-newsForm.addEventListener("submit", (inputValue)=>{
+  event.preventDefault()
+  let newsInput = document.querySelector("#newsSearch").value;
 
-    url=`https://newsapi.org/v2/everything?q=${inputValue}&language=en&pageSize=10&apiKey=233b6411d34640098f2872adb12f88d8`
+console.log(newsInput,"string News");
+    url=`https://newsapi.org/v2/everything?q=${newsInput}&language=en&pageSize=10&apiKey=233b6411d34640098f2872adb12f88d8`
 
     fetch(url)
     .then((res=>{res.json()
