@@ -181,3 +181,5 @@ document.getElementById('newsCard').innerHTML = res.articles.map(item =>
 }
 
 );
+
+NewsFunction("general");
