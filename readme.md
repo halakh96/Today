@@ -1,4 +1,4 @@
-# <img src="img/icon.png" width="50px"> Today Project
+#  Today Project
 
 
 ## Introduction
@@ -13,7 +13,7 @@ Today's Project is a website that shows you today's news around the world and ca
 * [News API](https://newsapi.org/)
 * [Weather API](https://www.weatherbit.io/api)
 
-## Project Requirements
+## Project Functions:
 - Design Responsive Website by [Bootstrap](https://getbootstrap.com/ "Bootstrap").
 - Fetch News from [News API](https://newsapi.org/).
 - Use map() js to display News information( title, author, publisher... etc) on Front End Cards.
@@ -21,8 +21,9 @@ Today's Project is a website that shows you today's news around the world and ca
 - Allow a Users to Search for News by Words.
 - Fetch Weather from [Weather API](https://www.weatherbit.io/api).
 - Display Weather on Your Website Home Page.
-- Allow the User to Search of Weather for a Specific City
 
-## Future Features:
-- Make the website in a different language and allow the user to select the website language.
-- Adding more filtering options to the site, such as selecting the news' country.
+## Sceenshot:
+<img alt='Screenshot' src="../img/screen.png"/>
+
+## Live preview
+Check out the demo page [Live Preview](https://festive-engelbart-1da659.netlify.app/)
