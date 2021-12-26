@@ -11,12 +11,14 @@ const fetchCat =(event)=>{
     NewsFunction(cat);
     }
 for(let i=0;i<AllCategories.length;i++){
-    AllCategories[i].addEventListener("click",fetchCat);
+    AllCategories[i].addEventListener("click",fetchCat) 
+    
+    };
 
-}
+
 
 const NewsFunction = (cat) => {
-    url=`https://newsapi.org/v2/top-headlines?category=${cat}&language=en&pageSize=5&page=${page}&apiKey=233b6411d34640098f2872adb12f88d8`
+    url=`https://newsapi.org/v2/top-headlines?category=${cat}&language=en&pageSize=5&page=${page}&apiKey=ed522d93f2be4ea08571b150297d9ee1`
 
     fetch(url)
     .then((res=>{res.json()
@@ -70,7 +72,7 @@ newsForm.addEventListener("submit", (event)=>{
   let newsInput = document.querySelector("#newsSearch").value;
 
 console.log(newsInput,"string News");
-    url=`https://newsapi.org/v2/everything?q=${newsInput}&language=en&pageSize=5&apiKey=233b6411d34640098f2872adb12f88d8`
+    url=`https://newsapi.org/v2/everything?q=${newsInput}&language=en&pageSize=5&apiKey=ed522d93f2be4ea08571b150297d9ee1`
 
     fetch(url)
     .then((res=>{res.json()
@@ -113,7 +115,7 @@ const api = '3ee75691029a24f2dc485291c42637ea';
 
 const iconImg = document.getElementById('weather-icon');
 const loc = document.querySelector('#location');
-const tempC = document.querySelector('.c');
+let tempC = document.querySelector('.c');
 const desc = document.querySelector('.desc');
 
 
@@ -155,30 +157,3 @@ window.addEventListener('load', () => {
 
 
 // API WEATHER BY SEARCH
- const weatherForm = document.querySelector(".citySearch form");
-weatherForm.addEventListener("submit", (event)=>{
-  event.preventDefault()
-  let City = document.querySelector("#citySearch").value;
- url =`https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=${api}&units=metric`;
-
- fetch(url)
- .then((response) => {
-   return response.json();
- })
- .then((data) => {
-   const  temp  = data.main;
-   const place = data.name;
-   const { description, icon } = data.weather[0];
-
-   const iconUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;          
-
-   // Interacting with DOM to show data
-   iconImg.src = iconUrl;
-   loc.textContent = `${place}`;
-   desc.textContent = `"${description}"`;
-   tempC.textContent = `${Math.floor(temp)}°`;
-
-   
-  
- });
-});

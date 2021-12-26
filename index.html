@@ -15,12 +15,13 @@
     <div class="container-fluid">
       <div class="row vh-100">
         <!--news info -->
-        <div class="col-12 col-md-9 bg-Light">
+        
+        <div class=" col-12 col-md-9 bg-Light p-0">
          <!-- top nav-->
-          <nav class="navbar navbar-expand-lg m-3">
-            <div class="container-fluid newsSearch">
+          <nav class="navbar navbar-expand-lg m-3 justify-content-center ">
+            <div class="container-fluid justify-content-center justify-content-md-between newsSearch">
               <a class="navbar-brand" href="#"><img src="/img/logo.png" alt="" /></a>
-              <form class="d-flex input-group w-50">
+              <form class="d-flex input-group w-50 ">
                 <input id="newsSearch"class="form-control" type="text" placeholder="Search .." aria-label="Search"/>
                 <span class="input-group-text bg-colors" type="submit"><i class="fas fa-search text-white"></i>
                 </span>
@@ -30,20 +31,18 @@
 
            <!--categories bar-->
           
-          
           <div class="nav d-flex justify-content-evenly mt-2 bg-Nav">
-            <div type="button"class="btn hover-bg-colors Category-Title" data-value="Business" > Business</div>
+            <div type="button"class="btn  Category-Title" data-value="Business" > Business</div>
             <div type="button"class="btn Category-Title" data-value="Entertainment"> Entertainment</div>
             <div type="button" class="btn Category-Title" data-value="general"> General </div>
             <div type="button" class="btn Category-Title" data-value="Health"> Health</div>
             <div type="button" class="btn Category-Title" data-value="Sports">Sports </div>
             <div type="button"class="btn Category-Title"  data-value="Technology"> Technology </div>
           </div>
-       
 
            <!--news cards-->
-          <div class="row m-5 p-3">
-            <div class="col-12 mx-auto" id="newsCard">
+          <div class="row m-3 ">
+            <div class="col-12 mx-auto " id="newsCard">
               <!--Fetching & mapping / js file-->
             </div>
             <nav aria-label="Page navigation">
@@ -53,33 +52,27 @@
               </ul>
             </nav>
           </div>
-          <footer class="footer">
+          <footer class="footer ">
             <ul class="nav justify-content-center p-3 bg-colors ">
               <li class="nav-item"><a href="" class="nav-link  text-white"><i class="fa fa-facebook fa-lg"></i></a></li>
               <li class="nav-item"><a href="" class="nav-link  text-white"><i class="fa fa-twitter fa-lg"></i></a></li>
               <li class="nav-item"><a href="" class="nav-link  text-white"><i class="fa fa-github fa-lg"></i></a></li>
               <li class="nav-item"><a href="" class="nav-link  text-white"><i class="fa fa-instagram fa-lg"></i></a></li>
           </ul>
-          </footer>        
+          </footer>  
+          
         </div>
-
         <!--weather info-->
-        <div class="col-12 col-md-3 bg-Dark">
-          <div class="sticky-top text-center citySearch ">
-            <h2 class="" id="location">Unable to Fetch Weather</h2>
-            <div class="desc fs-4 ">No Information Available.</div>
+        <div class="col-12 col-md-3 bg-Dark ">
+          <div id="city"class=" text-center  p-3 sticky-top">
+            <h2 class="" id="location">loading</h2>
+            <div class="desc fs-4 ">loading</div>
             <img src="" alt="" srcset="" id="weather-icon" />
             <div class=" weatherTemp bg-colors d-flex align-items-center justify-content-center mx-auto ">
-              <h2 class="c fs-1">Error</h2>
+              <h2 class="c fs-1">loading</h2>
             </div>
-            <form class="d-flex m-4">
-              <input id="citySearch" class="form-control"type="text" placeholder="Search .."aria-label="Search"/>
-              <span class="input-group-text bg-colors" type="submit"><i class="fas fa-search text-white"></i>
-              </span>
-            </form>
-          </div>
         </div>
-
+      </div>
 
       </div>
     </div>
