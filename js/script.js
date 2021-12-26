@@ -1,4 +1,112 @@
 
+// API NEWS BY CATEGORIES
+const AllCategories = document.querySelectorAll(".Category-Title");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+var page = '1';
+
+const fetchCat =(event)=>{
+    let cat = event.target.getAttribute("data-value")
+    console.log(cat);
+    NewsFunction(cat);
+    }
+for(let i=0;i<AllCategories.length;i++){
+    AllCategories[i].addEventListener("click",fetchCat);
+
+}
+
+const NewsFunction = (cat) => {
+    url=`https://newsapi.org/v2/top-headlines?category=${cat}&language=en&pageSize=5&page=${page}&apiKey=233b6411d34640098f2872adb12f88d8`
+
+    fetch(url)
+    .then((res=>{res.json()
+        .then((res)=>{ 
+            console.log(res.articles)
+    
+            //mapping here
+      
+document.getElementById('newsCard').innerHTML = res.articles.map(item =>
+`  <div class="card p-3 mt-3 border border-secondary">
+<div class="row ">
+<div class="col-12 col-md-4 "><img class="w-100 h-100 "src="${item.urlToImage}" alt=""></img>
+</div>
+<div class="col-12 col-md-8 mt-2">
+    <h4>${item.title}</h4>
+    <p>${item.description}</p>
+    <a href="${item.url}">Read More</a>
+    <p class="float-end">${item.publishedAt} </p>
+</div>
+    </div>
+    </div>
+
+    `
+          ).join('')
+
+        })
+    }))
+    nextBtn.addEventListener("click", ()=>{
+      console.log("next");
+      page++;
+      NewsFunction(cat);
+      })
+
+      prevBtn.addEventListener("click", ()=>{
+        page--;
+        NewsFunction();
+        })
+        
+    
+}
+
+
+
+
+
+// API NEWS BY SEARCH 
+const newsForm = document.querySelector(".newsSearch form");
+newsForm.addEventListener("submit", (event)=>{
+
+  event.preventDefault()
+  let newsInput = document.querySelector("#newsSearch").value;
+
+console.log(newsInput,"string News");
+    url=`https://newsapi.org/v2/everything?q=${newsInput}&language=en&pageSize=5&apiKey=233b6411d34640098f2872adb12f88d8`
+
+    fetch(url)
+    .then((res=>{res.json()
+        .then((res)=>{ 
+            console.log(res.articles)
+    
+            //mapping here
+      
+document.getElementById('newsCard').innerHTML = res.articles.map(item =>
+  `  <div class="card p-3 mt-3 border border-secondary">
+  <div class="row ">
+  <div class="col-12 col-md-4 "><img class="w-100 h-100 "src="${item.urlToImage}" alt=""></img>
+  </div>
+  <div class="col-12 col-md-8 mt-2">
+      <h4>${item.title}</h4>
+      <p>${item.description}</p>
+      <a href="${item.url}">Read More</a>
+      <p class="float-end">${item.publishedAt} </p>
+  </div>
+      </div>
+      </div>
+  
+      `
+            ).join('')
+
+        })
+    }))
+
+}
+
+);
+
+NewsFunction("general");
+
+
+
 
 // API WEATHER / CURRENT LOCATION
 const api = '3ee75691029a24f2dc485291c42637ea'; 
@@ -35,7 +143,7 @@ window.addEventListener('load', () => {
           // Interacting with DOM to show data
           iconImg.src = iconUrl;
           loc.textContent = `${place}`;
-          desc.textContent = `${description}`;
+          desc.textContent = `"${description}"`;
           tempC.textContent = `${Math.floor(temp)}°`;
 
           
@@ -48,11 +156,9 @@ window.addEventListener('load', () => {
 
 // API WEATHER BY SEARCH
  const weatherForm = document.querySelector(".citySearch form");
-
 weatherForm.addEventListener("submit", (event)=>{
   event.preventDefault()
-
-  let City = document.querySelector(".citySearch input").value;
+  let City = document.querySelector("#citySearch").value;
  url =`https://api.openweathermap.org/data/2.5/weather?q=${City}&appid=${api}&units=metric`;
 
  fetch(url)
@@ -69,117 +175,10 @@ weatherForm.addEventListener("submit", (event)=>{
    // Interacting with DOM to show data
    iconImg.src = iconUrl;
    loc.textContent = `${place}`;
-   desc.textContent = `${description}`;
+   desc.textContent = `"${description}"`;
    tempC.textContent = `${Math.floor(temp)}°`;
 
    
   
  });
 });
-
-
-
-
-// API NEWS BY CATEGORIES
-const AllCategories = document.querySelectorAll(".Category-Title");
-const prevBtn = document.getElementById("prev");
-const nextBtn = document.getElementById("next");
-var page = '1';
-
-const fetchCat =(event)=>{
-    let cat = event.target.getAttribute("data-value")
-    console.log(cat);
-    NewsFunction(cat);
-    }
-for(let i=0;i<AllCategories.length;i++){
-    AllCategories[i].addEventListener("click",fetchCat);
-
-}
-
-const NewsFunction = (cat) => {
-    url=`https://newsapi.org/v2/top-headlines?category=${cat}&language=en&pageSize=2&page=${page}&apiKey=233b6411d34640098f2872adb12f88d8`
-
-    fetch(url)
-    .then((res=>{res.json()
-        .then((res)=>{ 
-            console.log(res.articles)
-    
-            //mapping here
-      
-document.getElementById('newsCard').innerHTML = res.articles.map(item =>
-`<div class="card p-3 mt-3">
-<div class="row ">
-<div class="col-12 col-md-4 "><img class="w-100 h-100 "src="${item.urlToImage}" alt=""></img>
-</div>
-<div class="col-12 col-md-8 mt-2">
-    <h4>${item.title}</h4>
-    <p>${item.description}</p>
-    <a href="${item.url}">Read More</a>
-    <p class="float-end">${item.publishedAt} </p>
-</div>
-    </div>
-    </div>
-    `
-          ).join('')
-
-        })
-    }))
-    nextBtn.addEventListener("click", ()=>{
-      console.log("next");
-      page++;
-      NewsFunction(cat);
-      })
-
-      prevBtn.addEventListener("click", ()=>{
-        page--;
-        NewsFunction();
-        })
-        
-    
-}
-
-
-
-
-
-// API NEWS BY SEARCH 
-const newsForm = document.querySelector(".newsSearch form");
-newsForm.addEventListener("submit", (event)=>{
-
-  event.preventDefault()
-  let newsInput = document.querySelector("#newsSearch").value;
-
-console.log(newsInput,"string News");
-    url=`https://newsapi.org/v2/everything?q=${newsInput}&language=en&pageSize=10&apiKey=233b6411d34640098f2872adb12f88d8`
-
-    fetch(url)
-    .then((res=>{res.json()
-        .then((res)=>{ 
-            console.log(res.articles)
-    
-            //mapping here
-      
-document.getElementById('newsCard').innerHTML = res.articles.map(item =>
-`<div class="card p-3 mt-3">
-<div class="row ">
-<div class="col-12 col-md-4 "><img class="w-100 "src="${item.urlToImage}" alt=""></img>
-</div>
-<div class="col-12 col-md-8 mt-2">
-    <h4>${item.title}</h4>
-    <p>${item.description}</p>
-    <a href="${item.url}">Read More</a>
-    <p class="float-end">${item.publishedAt} </p>
-</div>
-    </div>
-    </div>
-    `
-          ).join('')
-
-        })
-    }))
-
-}
-
-);
-
-NewsFunction("general");

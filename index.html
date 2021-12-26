@@ -12,82 +12,79 @@
 
 </head>
 <body>
-  <div class="container m-5 ">
+  <div class="container-fluid ">
+    <div class="row vh-100 ">
+        <div class="col-12 col-md-9 bg-Light">
 
-    <!--weather info-->
-<div class="row justify-content-center m-5">
-  <div class="col-12 col-md-6 ">
-    <div class="card w-75 mx-auto " id="bg-card">
-      <div class="container p-4 citySearch">
-        <form class="d-flex m-4 ">
-          <input  class="form-control "type="text" placeholder="Search .." aria-label="Search">
-          <span class=" input-group-text bg-primary " type="submit"><i class="fas fa-search text-white"></i>
-          </span>
-        </form>
-        <div class="d-flex ">
-          <div>
-        <div class="fs-1 " id="location">Unable to Fetch Weather</div>
-        <div class="desc fs-5">No Information Available.</div>
+            <nav class="navbar navbar-expand-lg m-3 ">
+                <div class="container-fluid newsSearch">
+     <a class="navbar-brand " href="#">
+       <img src="/img/logo.png" alt="">
+     </a>
+     <form class="d-flex  input-group w-50 ">
+        <input id="newsSearch"  class="form-control "type="text" placeholder="Search .." aria-label="Search">
+        <span class=" input-group-text  bg-colors  " type="submit"><i class="fas fa-search text-white"></i>
+        </span>
+      </form>
       </div>
-        <img class="ms-auto"src="" alt="" srcset="" id="weather-icon">
-      </div>
-      <div class="weather fs-1 fw-bold text-center">
-        <div class="c">Error</div>
-      </div>   
+</nav>
+     
+<div class="d-flex justify-content-evenly mt-2  bg-catNav col-12"> 
+    <div type="button" class="btn hover-bg-colors Category-Title" data-value="Business">Business</div>
+    <div type="button" class="btn Category-Title" data-value="Entertainment">Entertainment</div>
+    <div type="button" class="btn Category-Title" data-value="general">General</div>
+    <div type="button" class="btn  Category-Title" data-value="Health">Health</div>
+    <div type="button" class="btn  Category-Title" data-value="Sports">Sports</div>
+    <div type="button" class="btn  Category-Title" data-value="Technology">Technology</div>
+</div>
 
+<div class="row  m-5 p-3 " >
+    <div class="col-12  mx-auto " id="newsCard">
+       <!--Fetching & mapping / js file-->
+     
+       
+      </div>
+      <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mt-3 ">
+          <li  class="page-item "><a id="prev" class="page-link bg-Dark " href="#"><i class="fas fa-arrow-left text-white"></i></a></li>
+          <li  class="page-item "><a id="next" class="page-link bg-Dark" href="#"><i class="fas fa-arrow-right text-white"></i></a></li>
+        </ul>
+      </nav>
     </div>
 
+</div> 
+
+<div class="col-12 col-md-3 bg-Dark ">
+  <!--weather info-->
+<div class="flex-column align-items-center justify-content-center text-center sticky-top mt-10 citySearch">
+
+        <h2 class=" my-auto" id="location">Unable to Fetch Weather</h2>
+        <div class="desc fs-4">No Information Available.</div>
+        <img  src="" alt="" srcset="" id="weather-icon">
+      <div class="weatherTemp bg-colors d-flex  align-items-center justify-content-center mx-auto">
+        <h2 class="c fs-1">Error</h2>
     </div>
+    <form class="d-flex m-4">
+      <input id="citySearch" class="form-control "type="text" placeholder="Search .." aria-label="Search">
+      <span class=" input-group-text bg-colors " type="submit"><i class="fas fa-search text-white"></i>
+      </span>
+    </form>
   </div>
 </div>
 
-<!--categories info-->
-<div class="row justify-content-center m-5">
-<div class="col-12 col-md-8  ">
-  <div class="card mx-auto newsSearch" >
-    <form class="d-flex m-4 ">
-      <input id="newsSearch"  class="form-control "type="text" placeholder="Search .." aria-label="Search">
-      <span class=" input-group-text bg-primary " type="submit"><i class="fas fa-search text-white"></i>
-      </span>
-    </form>
-    <div class="d-flex justify-content-center  ">
-    <div type="button" class="btn  m-1 Category-Title" data-value="Business">Business</div>
-    <div type="button" class="btn  m-1 Category-Title" data-value="Entertainment">Entertainment</div>
-    <div type="button" class="btn  m-1 Category-Title" data-value="general">General</div>
-  </div>
-  <div class="d-flex justify-content-center mb-4  ">
-    <div type="button" class="btn  m-1 Category-Title" data-value="Health">Health</div>
-    <div type="button" class="btn  m-1 Category-Title" data-value="Sports">Sports</div>
-    <div type="button" class="btn  m-1 Category-Title" data-value="Technology">Technology</div>
-  </div>
+ 
+</div>  
 
+
+
+</div>    
 
 
   
-</div>
-</div>
-</div>
-
-<!--news info-->
-<div class="row  m-5 p-3 " >
-<div class="col-12  mx-auto " id="newsCard">
-   <!--Fetching & mapping / js file-->
-
-     <!--pagenation-->
-
-   
-  </div>
-  <nav aria-label="Page navigation  ">
-    <ul class="pagination justify-content-center mt-3">
-      <li  class="page-item "><a id="prev" class="page-link bg-primary " href="#"><i class="fas fa-arrow-left text-white"></i></a></li>
-      <li  class="page-item "><a id="next" class="page-link bg-primary" href="#"><i class="fas fa-arrow-right text-white"></i></a></li>
-    </ul>
-  </nav>
-</div>
-</div>
+  
 
 
-</div>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>

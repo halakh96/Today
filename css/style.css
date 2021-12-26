@@ -1,22 +1,48 @@
-body {
-  background: rgb(188, 220, 247)!important;
+.bg-Dark {
+  background: #353535!important;
+  color:#ffffff!important;
+ }
+ 
+ .bg-Light {
+     background: #f1f1f1!important;
+     color:#353535!important;
+ 
+ }
+ 
+ .bg-catNav{
+   background: rgb(231, 231, 231)!important;
+ }
+
+ .bg-colors{
+  background: hsla(198, 41%, 33%, 1);
+
+  background: linear-gradient(120deg, hsla(198, 41%, 33%, 1) 0%, hsla(170, 36%, 56%, 1) 50%, hsla(183, 40%, 79%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#316176", endColorstr="#66b7aa", GradientType=1 );
+color: #ffffff!important;   
+
+
+ }
+ .btn:active,
+.btn:focus,
+.btn:hover {
+  background: hsla(198, 41%, 33%, 1);
+
+  background: linear-gradient(120deg, hsla(198, 41%, 33%, 1) 0%, hsla(170, 36%, 56%, 1) 50%, hsla(183, 40%, 79%, 1) 100%);
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#316176", endColorstr="#66b7aa", GradientType=1 );
+color: #ffffff!important;   
 
 }
 
+.weatherTemp {
 
-#bg-card {
-  border-radius: 30px;
-  background: rgb(241, 241, 241);
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
 
-}
+   
 
-.btn {
-  border-color: lightgray!important;
-  background: white;
-
-}
-.btn:hover{
-background: rgba(36, 160, 237,0.3);
-
+    
 
 }
