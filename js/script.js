@@ -31,7 +31,7 @@ document.getElementById('newsCard').innerHTML = res.articles.map(item =>
 <div class="col-12 col-md-4 "><img class="w-100 h-100 "src="${item.urlToImage}" alt=""></img>
 </div>
 <div class="col-12 col-md-8 mt-2">
-    <h4>${item.title}</h4>
+    <h5>${item.title}</h5>
     <p>${item.description}</p>
     <a href="${item.url}">Read More</a>
     <p class="float-end">${item.publishedAt} </p>
@@ -85,7 +85,7 @@ document.getElementById('newsCard').innerHTML = res.articles.map(item =>
   <div class="col-12 col-md-4 "><img class="w-100 h-100 "src="${item.urlToImage}" alt=""></img>
   </div>
   <div class="col-12 col-md-8 mt-2">
-      <h4>${item.title}</h4>
+      <h5>${item.title}</h5>
       <p>${item.description}</p>
       <a href="${item.url}">Read More</a>
       <p class="float-end">${item.publishedAt} </p>
