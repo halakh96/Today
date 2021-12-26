@@ -23,7 +23,7 @@ Today's Project is a website that shows you today's news around the world and ca
 - Display Weather on Your Website Home Page.
 
 ## Sceenshot:
-<img alt='Screenshot' src="../img/screen.png"/>
+<img src="img/screen.png">
 
 ## Live preview
 Check out the demo page [Live Preview](https://festive-engelbart-1da659.netlify.app/)
