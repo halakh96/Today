@@ -9,7 +9,9 @@
      color:#353535!important;
  
  }
- 
+ .form-control:focus {
+  box-shadow: none !important;
+}  
  .bg-Nav{
    background: rgb(231, 231, 231)!important;
  }
