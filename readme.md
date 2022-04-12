@@ -26,4 +26,4 @@ Today's Project is a website that shows you today's news around the world and ca
 <img src="img/screen.png">
 
 ## Live preview
-Check out the demo page [Live Preview](https://festive-engelbart-1da659.netlify.app/)
+Check out the demo page [Live Preview](https://halakh96-today.netlify.app/)
